@@ -25,45 +25,53 @@ let b = 32
 ### 1. Print the result of a greater than or equal to b
 */
 // write your code here
-
+print (a >= b)
 
 /*: Question 2
 ### 2. Print the result of a modulo b is equal to zero
 */
 // write your code here
-
+print(a % b == 0)
 
 /*: Question 3
 ### 3. Print the result of y times b less than or equal to a
 */
 // write your code here
-
+print(y*b <= a)
 
 /*: Question 4
 ### 4. Print the inverse of a greater than or equal to b
 */
 // write your code here
-
+print(!(a >= b))
 
 
 /*: Question 5
 ### 5. Print "true" if a modulo b is equal to zero
 */
 // write your code here
-
+if a%b == 0 {
+    print("true")
+}
 
 /*: Question 6
 ### 6. Print "true" if a divided by b is greater than x
 */
 // write your code here
-
+if a/b > Int(x) {
+    print("true")
+}
 
 
 /*: Question 7
 ### 7. Print "true" if y divided by x is greater than three, otherwise print false
 */
 // write your code here
-
+if y/Int(x) > 3 {
+    print("true")
+} else {
+    print(false)
+}
 
 
 
@@ -71,7 +79,9 @@ let b = 32
 ### 8. Print "true" if y is greater than x and a divided by b is greater than 9
 */
 // write your code here
-
+if (y > Int(x) && a/b > 9){
+    print(true)
+}
 
 
 
@@ -79,7 +89,10 @@ let b = 32
 ### 9. Write a function "isGreater" that takes two Int arguments and returns true if the first is greater than the second and false if they're not
 */
 // write your code here
-
+func isGreater(int1: Int, int2: Int) -> Bool {
+    return int1 > int2
+}
+isGreater(10, int2: 9)
 
 
 
@@ -89,17 +102,31 @@ let b = 32
 ### 10. write a function "isForceWith" that takes a String argument and returns true if the argument is the name of some whom the force is strong with, otherwise it returns false.  People who have the force are Luke, Leia, Anakin, Obi Wan, Yoda, Vader.
 */
 // write your code here
+func isForceWith(string: String) -> Bool {
+    switch string {
+    case "Luke", "Leia", "Anakin", "Obi Wan", "Yoda", "Vader":
+        return true
+    default:
+        return false
+    }
+}
 
-
-
+isForceWith("Judah")
+isForceWith("Luke")
 /*: Question 11
 ### 11. Create a function where the two arguments represent different bank account (one of those bank accounts is yours). What type should these arguments be if we are to then perform some math operations on them? Setup a conditional that will add 10 to your funds and minus 10 from the other funds (bank account) if the other account won't go negative if we were to take 10 dollars from it.
 */
 // write your code here
+func takeTenIfCan(myBankAccount: Float, yourBankAccount: Float) {
+    if yourBankAccount > 10.0 {
+        var yourNewBalance = yourBankAccount - 10.0
+        var myNewBalance = myBankAccount + 10.0
+    }
+    
+}
 
 
-
-
+takeTenIfCan(10000.00, yourBankAccount: 12.0)
 
 /*:
  Checkout the solution branch - git co solution or git checkout solution and then scroll back down to this very spot to see a link that directs you to the solutions to the above questions.
